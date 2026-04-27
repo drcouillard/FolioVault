@@ -58,7 +58,7 @@ Record all answers. Do not interpret or editorialize during intake. Capture what
  
 Using the intake answers, build the full identity document. Reference `references/archetypes.md` to select and justify the brand archetype.
  
-**Required outputs — every field must be filled or marked `[PENDING]`:**
+**Required outputs — every required field must be filled or marked `[PENDING]`; optional fields may be skipped:**
  
 | Output | Description |
 |---|---|

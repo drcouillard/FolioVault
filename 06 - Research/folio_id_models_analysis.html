@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instructional Design Models — Folio Interactive Reference</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --folio-blue: #185FA5;
+    --deep-blue: #0C447C;
+    --blue-tint: #E6F1FB;
+    --folio-teal: #1D9E75;
+    --deep-teal: #085041;
+    --teal-tint: #E1F5EE;
+    --folio-amber: #BA7517;
+    --amber-tint: #FAEEDA;
+    --ink: #2C2C2A;
+    --slate: #5F5E5A;
+    --warm-gray: #D3D1C7;
+    --off-white: #F1EFE8;
+    --white: #FFFFFF;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Barlow', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--ink);
+    background: var(--off-white);
+  }
+
+  /* ─── COVER ─────────────────────────────────────── */
+  .cover {
+    background: var(--deep-blue);
+    color: var(--white);
+    padding: 80px 60px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: rgba(24,95,165,0.4);
+  }
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: -40px;
+    width: 260px; height: 260px;
+    border-radius: 50%;
+    background: rgba(29,158,117,0.25);
+  }
+  .cover-label {
+    font-family: 'Barlow', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 20px;
+    position: relative; z-index: 1;
+  }
+  .cover h1 {
+    font-family: 'Lora', serif;
+    font-size: 38px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--white);
+    max-width: 640px;
+    position: relative; z-index: 1;
+    margin-bottom: 16px;
+  }
+  .cover .subtitle {
+    font-family: 'Barlow', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.75);
+    max-width: 560px;
+    position: relative; z-index: 1;
+    margin-bottom: 40px;
+  }
+  .cover-meta {
+    display: flex;
+    gap: 32px;
+    position: relative; z-index: 1;
+    flex-wrap: wrap;
+  }
+  .cover-meta-item {
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.55);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .cover-meta-item span {
+    display: block;
+    color: rgba(255,255,255,0.9);
+    font-size: 14px;
+    text-transform: none;
+    letter-spacing: 0;
+    margin-top: 2px;
+  }
+
+  /* ─── LAYOUT ─────────────────────────────────────── */
+  .wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  /* ─── PURPOSE BOX ─────────────────────────────────── */
+  .purpose-section {
+    background: var(--blue-tint);
+    border-left: 4px solid var(--folio-blue);
+    padding: 32px 40px;
+    margin: 0;
+  }
+  .purpose-section h2 {
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--deep-blue);
+    margin-bottom: 12px;
+  }
+  .purpose-section p {
+    font-size: 15px;
+    color: var(--ink);
+    max-width: 720px;
+  }
+
+  /* ─── SECTION HEADERS ────────────────────────────── */
+  .section-header {
+    padding: 52px 40px 0;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .section-number {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--folio-teal);
+    margin-bottom: 6px;
+  }
+  .section-title {
+    font-family: 'Lora', serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--deep-blue);
+    line-height: 1.25;
+    margin-bottom: 8px;
+  }
+  .section-intro {
+    font-size: 15px;
+    color: var(--slate);
+    max-width: 700px;
+    margin-bottom: 32px;
+  }
+
+  /* ─── MODEL CARDS ─────────────────────────────────── */
+  .models-grid {
+    padding: 0 40px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .model-card {
+    background: var(--white);
+    border-radius: 8px;
+    border: 1px solid var(--warm-gray);
+    overflow: hidden;
+  }
+
+  .model-card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 24px 28px 20px;
+    border-bottom: 1px solid var(--warm-gray);
+    background: var(--white);
+  }
+
+  .model-number-badge {
+    background: var(--folio-blue);
+    color: var(--white);
+    font-family: 'Lora', serif;
+    font-size: 15px;
+    font-weight: 600;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .model-header-text h3 {
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--deep-blue);
+    line-height: 1.25;
+    margin-bottom: 4px;
+  }
+
+  .model-meta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .model-tag {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 20px;
+  }
+  .tag-process { background: var(--blue-tint); color: var(--deep-blue); }
+  .tag-cognitive { background: var(--teal-tint); color: var(--deep-teal); }
+  .tag-motivational { background: var(--amber-tint); color: var(--folio-amber); }
+  .tag-systems { background: #F0EBF8; color: #4A2780; }
+  .tag-agile { background: #FDE8EC; color: #A0233C; }
+  .tag-design { background: var(--blue-tint); color: var(--deep-blue); }
+
+  .model-card-body {
+    padding: 24px 28px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  @media (max-width: 680px) {
+    .model-card-body { grid-template-columns: 1fr; }
+  }
+
+  .model-section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--slate);
+    margin-bottom: 8px;
+  }
+
+  .model-card-body p, .model-card-body li {
+    font-size: 14.5px;
+    color: var(--ink);
+    line-height: 1.65;
+  }
+
+  .model-card-body ul {
+    padding-left: 18px;
+  }
+  .model-card-body ul li {
+    margin-bottom: 4px;
+  }
+
+  .model-card-folio {
+    grid-column: 1 / -1;
+    background: var(--teal-tint);
+    border-radius: 6px;
+    padding: 16px 20px;
+    border-left: 3px solid var(--folio-teal);
+  }
+
+  .model-card-folio .model-section-label {
+    color: var(--deep-teal);
+    margin-bottom: 6px;
+  }
+
+  .model-card-folio p {
+    font-size: 14px;
+    color: var(--ink);
+  }
+
+  .folio-verdict {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 2px 10px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+  }
+  .verdict-adopt { background: var(--folio-teal); color: white; }
+  .verdict-partial { background: var(--folio-amber); color: white; }
+  .verdict-reference { background: var(--slate); color: white; }
+  .verdict-skip { background: var(--warm-gray); color: var(--ink); }
+
+  /* ─── SYNTHESIS TABLE ─────────────────────────────── */
+  .synthesis-section {
+    padding: 52px 40px 0;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--warm-gray);
+    margin-top: 24px;
+    font-size: 13.5px;
+  }
+
+  .comparison-table th {
+    background: var(--deep-blue);
+    color: white;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 12px 16px;
+    text-align: left;
+  }
+
+  .comparison-table td {
+    padding: 11px 16px;
+    border-bottom: 1px solid var(--off-white);
+    color: var(--ink);
+    vertical-align: top;
+  }
+
+  .comparison-table tr:last-child td { border-bottom: none; }
+  .comparison-table tr:nth-child(even) td { background: var(--off-white); }
+
+  .dot-adopt { color: var(--folio-teal); font-weight: 700; }
+  .dot-partial { color: var(--folio-amber); font-weight: 700; }
+  .dot-skip { color: var(--warm-gray); font-weight: 700; }
+
+  /* ─── FOLIO SYNTHESIS BOX ─────────────────────────── */
+  .synthesis-box {
+    background: var(--deep-blue);
+    color: white;
+    padding: 48px 40px;
+    margin-top: 52px;
+  }
+
+  .synthesis-box h2 {
+    font-family: 'Lora', serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 20px;
+  }
+
+  .synthesis-box p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.85);
+    max-width: 740px;
+    margin-bottom: 14px;
+  }
+
+  .synthesis-pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 32px;
+  }
+
+  @media (max-width: 680px) {
+    .synthesis-pillars { grid-template-columns: 1fr; }
+  }
+
+  .pillar-card {
+    background: rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 20px;
+    border-top: 3px solid var(--folio-teal);
+  }
+
+  .pillar-card h4 {
+    font-family: 'Lora', serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 8px;
+  }
+
+  .pillar-card p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 0;
+  }
+
+  .pillar-source {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--folio-teal);
+    margin-top: 10px;
+    display: block;
+  }
+
+  /* ─── BRUNER NOTE ─────────────────────────────────── */
+  .bruner-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 52px 40px 0;
+  }
+
+  .bruner-callout {
+    background: var(--amber-tint);
+    border-left: 4px solid var(--folio-amber);
+    padding: 28px 32px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 0;
+  }
+
+  .bruner-callout h3 {
+    font-family: 'Lora', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--folio-amber);
+    margin-bottom: 10px;
+  }
+
+  .bruner-callout p {
+    font-size: 14.5px;
+    color: var(--ink);
+    line-height: 1.7;
+  }
+
+  /* ─── FOOTER ─────────────────────────────────────── */
+  footer {
+    background: var(--ink);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    font-size: 12px;
+    padding: 28px 40px;
+    margin-top: 60px;
+    letter-spacing: 0.04em;
+  }
+  footer strong {
+    color: rgba(255,255,255,0.8);
+  }
+
+  /* ─── DIVIDER ─────────────────────────────────────── */
+  .section-divider {
+    height: 1px;
+    background: var(--warm-gray);
+    max-width: 900px;
+    margin: 48px auto 0;
+  }
+
+  /* ─── TOC ─────────────────────────────────────────── */
+  .toc-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 40px 0;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 16px;
+  }
+  @media (max-width: 640px) { .toc-grid { grid-template-columns: 1fr 1fr; } }
+
+  .toc-item {
+    background: var(--white);
+    border: 1px solid var(--warm-gray);
+    border-radius: 6px;
+    padding: 12px 14px;
+    font-size: 13px;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .toc-item-num {
+    font-weight: 600;
+    color: var(--folio-blue);
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-label">Folio Interactive · Phase 2 · Instructional Design Foundation</div>
+  <h1>Instructional Design Models: A Comparative Analysis</h1>
+  <p class="subtitle">Examining 14 foundational frameworks to define Folio's pedagogical DNA — what to adopt, what to borrow, and what to skip.</p>
+  <div class="cover-meta">
+    <div class="cover-meta-item">Prepared for<span>Rob — Folio Interactive</span></div>
+    <div class="cover-meta-item">Status<span>Phase 2 Working Document</span></div>
+    <div class="cover-meta-item">Date<span>April 2026</span></div>
+    <div class="cover-meta-item">Classification<span>Confidential</span></div>
+  </div>
+</div>
+
+<!-- PURPOSE -->
+<div class="purpose-section">
+  <div class="wrapper">
+    <h2>Purpose of This Document</h2>
+    <p>Folio's curriculum model is currently described as "Saxon-inspired," tracing to Bruner's scaffolding theory. That framing is correct but incomplete. Before Folio can make defensible decisions about how content is sequenced, how failure is handled, how motivation is sustained, and how mastery is defined, it needs a clear-eyed view of what existing instructional design science offers. This document examines fourteen major frameworks — their structure, strengths, limitations, and fit for Folio's specific context — and synthesizes a working model Folio can call its own.</p>
+  </div>
+</div>
+
+<!-- TOC -->
+<div class="toc-section">
+  <div class="section-number">Contents</div>
+  <div class="toc-grid">
+    <div class="toc-item"><span class="toc-item-num">01</span>ADDIE Model</div>
+    <div class="toc-item"><span class="toc-item-num">02</span>Bloom's Taxonomy</div>
+    <div class="toc-item"><span class="toc-item-num">03</span>Gagné's Nine Events</div>
+    <div class="toc-item"><span class="toc-item-num">04</span>Dick & Carey Systems Model</div>
+    <div class="toc-item"><span class="toc-item-num">05</span>Rapid Prototyping</div>
+    <div class="toc-item"><span class="toc-item-num">06</span>Esseff's Guaranteed Learning</div>
+    <div class="toc-item"><span class="toc-item-num">07</span>Keller's ARCS Model</div>
+    <div class="toc-item"><span class="toc-item-num">08</span>MOM (Hardré & Miller)</div>
+    <div class="toc-item"><span class="toc-item-num">09</span>Smith/Ragan Model</div>
+    <div class="toc-item"><span class="toc-item-num">10</span>Morrison/Ross/Kemp</div>
+    <div class="toc-item"><span class="toc-item-num">11</span>OAR Model</div>
+    <div class="toc-item"><span class="toc-item-num">12</span>SAM (Allen)</div>
+    <div class="toc-item"><span class="toc-item-num">13</span>Backward Design</div>
+    <div class="toc-item"><span class="toc-item-num">14</span>Bruner's Scaffolding</div>
+  </div>
+</div>
+
+<!-- SECTION 1: PROCESS MODELS -->
+<div class="section-header">
+  <div class="section-number">Section 01 — Process & Systems Models</div>
+  <h2 class="section-title">How Instruction Gets Designed</h2>
+  <p class="section-intro">These models govern the design and development process — not what students learn, but how learning experiences get built. They're frameworks for the author, not the learner.</p>
+</div>
+
+<div class="models-grid">
+
+  <!-- 01: ADDIE -->
+  <div class="model-card">
+    <div class="model-card-header">
+      <div class="model-number-badge">01</div>
+      <div class="model-header-text">
+        <h3>The ADDIE Model</h3>
+        <div class="model-meta">
+          <span class="model-tag tag-process">Process Model</span>
+          <span class="model-tag tag-systems">Systems Design</span>
+        </div>
+      </div>
+    </div>
+    <div class="model-card-body">
+      <div>
+        <div class="model-section-label">What It Is</div>
+        <p>ADDIE is the most widely used instructional design process model. It organizes the work of building any learning experience into five sequential phases: <strong>Analysis</strong> (who are the learners, what's the gap), <strong>Design</strong> (objectives, sequence, assessment strategy), <strong>Development</strong> (building actual content), <strong>Implementation</strong> (delivery), and <strong>Evaluation</strong> (did it work, what changes). Originally developed for the U.S. military in the 1970s, it became the default framework in corporate training and academic instructional design. Its lineage traces to systems thinking and behavioral learning theory.</p>
+      </div>
+      <div>
+        <div class="model-section-label">Strengths &amp; Limitations</div>
+        <ul>
+          <li><strong>Strengths:</strong> Logical and comprehensive. Forces upfront clarity about learner needs before any content is written. Each phase produces a deliverable that the next phase depends on. Works well for structured, well-scoped content.</li>
+          <li><strong>Limitations:</strong> Inherently linear and slow. In practice, the phases are rarely as clean as the model implies. Significant rework is common when Analysis assumptions turn out to be wrong. Not agile — a full ADDIE cycle for a module takes weeks, not days. Evaluation is the most frequently skipped phase.</li>
+        </ul>
+      </div>
+      <div class="model-card-folio">
+        <span class="folio-verdict verdict-partial">Partially Adopted</span>
+        <div class="model-section-label">Folio Relevance</div>
+        <p>Folio's content pipeline implicitly follows ADDIE's logic: analysis (what does a 9th grader need to understand map skills), design (learning objectives, question composition), development (content authoring), implementation (POC), evaluation (educator verification + student feedback). However, Folio doesn't need to run a formal ADDIE process for every module. The framework is most useful as a <em>checklist</em> — specifically to ensure the Analysis phase doesn't get skipped when expanding to new subjects or grade levels. The Evaluation phase maps directly to Folio's educator verification requirement.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 04: Dick & Carey -->
+  <div class="model-card">
+    <div class="model-card-header">
+      <div class="model-number-badge">04</div>
+      <div class="model-header-text">
+        <h3>Dick &amp; Carey Systems Approach Model</h3>
+        <div class="model-meta">
+          <span class="model-tag tag-systems">Systems Design</span>
+          <span class="model-tag tag-process">Process Model</span>
+        </div>
+      </div>
+    </div>
+    <div class="model-card-body">
+      <div>
+        <div class="model-section-label">What It Is</div>
+        <p>Walter Dick and Lou Carey's model is a more rigorous, detailed evolution of ADDIE — often considered the gold standard of instructional systems design (ISD). It specifies nine interdependent stages: identify instructional goal, conduct instructional analysis, identify entry behaviors, write performance objectives, develop criterion-referenced tests, develop instructional strategy, develop/select materials, design and conduct formative evaluation, revise instruction, and summative evaluation. Every stage feeds the next; evaluation data flows back to revise earlier decisions. It is deeply rooted in behaviorist and cognitive learning theory and is explicit that assessment must precede content development.</p>
+      </div>
+      <div>
+        <div class="model-section-label">Strengths &amp; Limitations</div>
+        <ul>
+          <li><strong>Strengths:</strong> Rigorous and defensible. The requirement that assessment criteria be defined before content is written prevents the common failure of teaching to the lesson rather than the objective. Formative evaluation loops are built in. Widely used in higher education and military training for exactly this rigor.</li>
+          <li><strong>Limitations:</strong> Complex and slow. Assumes institutional resources, multiple stakeholders, and time for thorough instructional analysis. The nine-stage structure is not practical for a solo founder building iteratively. Best suited for high-stakes, high-volume curricula where rework cost is prohibitive.</li>
+        </ul>
+      </div>
+      <div class="model-card-folio">
+        <span class="folio-verdict verdict-reference">Reference Only</span>
+        <div class="model-section-label">Folio Relevance</div>
+        <p>Folio won't run Dick &amp; Carey end-to-end. But two principles deserve direct adoption: (1) <strong>define mastery criteria before writing content</strong> — Folio's question design should always begin with "what does mastery look like?" not "what content should I cover"; and (2) <strong>formative evaluation loops</strong> — Folio's educator verification requirement is precisely the formative check Dick &amp; Carey prescribe. The model validates that Folio's content pipeline structure is sound.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 05: Rapid Prototyping -->
+  <div class="model-card">
+    <div class="model-card-header">
+      <div class="model-number-badge">05</div>
+      <div class="model-header-text">
+        <h3>Rapid Prototyping</h3>
+        <div class="model-meta">
+          <span class="model-tag tag-agile">Agile / Iterative</span>
+          <span class="model-tag tag-process">Process Model</span>
+        </div>
+      </div>
+    </div>
+    <div class="model-card-body">
+      <div>
+        <div class="model-section-label">What It Is</div>
+        <p>Rapid Prototyping, as an instructional design methodology, emerged as a reaction to linear models like ADDIE and Dick &amp; Carey. Rather than completing each phase before moving to the next, it builds a rough working version early and iterates based on real feedback. In instructional design, this typically means: draft a functional prototype of the learning experience quickly, put it in front of learners or reviewers, collect feedback, revise. The cycle repeats until quality is sufficient. It shares philosophical roots with Agile software development and was formalized in ID contexts by researchers like Tripp and Bichelmeyer in the early 1990s.</p>
+      </div>
+      <div>
+        <div class="model-section-label">Strengths &amp; Limitations</div>
+        <ul>
+          <li><strong>Strengths:</strong> Faster time-to-feedback. Surfaces real problems earlier than linear models. Better suited to contexts where requirements are unclear upfront — which is almost always true for novel digital learning experiences. Aligns with solo founder reality: build something, test it, improve it.</li>
+          <li><strong>Limitations:</strong> Risk of "endless beta" — iterating without clear quality criteria can delay shipping indefinitely. Requires genuine user access for meaningful feedback loops. Can produce inconsistent quality across modules if each iteration starts fresh without cumulative learning.</li>
+        </ul>
+      </div>
+      <div class="model-card-folio">
+        <span class="folio-verdict verdict-adopt">Adopted</span>
+        <div class="model-section-label">Folio Relevance</div>
+        <p>Folio's POC is already a rapid prototype — a functional artifact built to test the full content loop, not to ship as a final product. This is the right instinct. Folio should formalize the cycle: <em>build a module → educator verifies → 5 pilot students use it → feedback captured → revise → next module</em>. The key addition rapid prototyping demands is defining exit criteria per cycle: what feedback would confirm this module is ready for the next stage? Without those criteria, the loop never closes.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 12: SAM -->
+  <div class="model-card">
+    <div class="model-card-header">
+      <div class="model-number-badge">12</div>
+      <div class="model-header-text">
+        <h3>Successive Approximation Model (SAM)</h3>
+        <div class="model-meta">
+          <span class="model-tag tag-agile">Agile / Iterative</span>
+          <span class="model-tag tag-process">Process Model</span>
+        </div>
+      </div>
+    </div>
+    <div class="model-card-body">
+      <div>
+        <div class="model-section-label">What It Is</div>
+        <p>SAM was developed by Michael Allen as a formal alternative to ADDIE specifically for e-learning and digital instructional design. It organizes work into three phases — Preparation, Iterative Design, and Iterative Development — with explicit cycles built into each. SAM1 is a simplified three-step loop (Evaluate → Design → Develop). SAM2 adds a Savvy Start workshop, rapid prototyping, and alpha/beta/gold release stages. The key philosophical shift from ADDIE: mistakes are expected and valuable early; the goal is to make them cheaply, fast, before the design hardens. Allen has argued that ADDIE's greatest flaw is its tolerance for extended planning before any real content is tested.</p>
+      </div>
+      <div>
+        <div class="model-section-label">Strengths &amp; Limitations</div>
+        <ul>
+          <li><strong>Strengths:</strong> Built for digital and e-learning contexts specifically. Formalizes what rapid prototyping recommends. The alpha/beta/gold progression maps cleanly to software development release cycles. Stakeholder review is embedded at each stage.</li>
+          <li><strong>Limitations:</strong> SAM2 still assumes a team with distinct roles (designer, developer, evaluator). SAM1 is lean enough for a solo operator. The model doesn't prescribe pedagogical theory — it's a workflow, not a learning model.</li>
+        </ul>
+      </div>
+      <div class="model-card-folio">
+        <span class="folio-verdict verdict-adopt">Adopted (SAM1)</span>
+        <div class="model-section-label">Folio Relevance</div>
+        <p>SAM1's three-step loop — Evaluate → Design → Develop — is Folio's practical development cycle for each module. It is leaner than full SAM2 and matches the solo founder constraint. Folio's "stages" can be: <em>Prototype</em> (draft content + basic interaction), <em>Review</em> (educator verification), <em>Pilot</em> (5 real students), <em>Revise</em>, <em>Ship</em>. This is SAM1 in Folio's language. The alpha/beta/gold framing is also worth adopting for communicating module status internally.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="section-divider"></div>
+
+<!-- SECTION 2: COGNITIVE / TAXONOMY MODELS -->
+<div class="section-header">
+  <div class="section-number">Section 02 — Cognitive &amp; Taxonomic Models</div>
+  <h2 class="section-title">How Learning Is Structured &amp; Sequenced</h2>
+  <p class="section-intro">These models describe what happens inside the learner — how knowledge is organized, at what depth, and in what order. They directly inform how Folio builds questions and sequences content.</p>
+</div>
+
+<div class="models-grid">
+
+  <!-- 02: Bloom's -->
+  <div class="model-card">
+    <div class="model-card-header">
+      <div class="model-number-badge">02</div>
+      <div class="model-header-text">
+        <h3>Bloom's Taxonomy (Revised)</h3>
+        <div class="model-meta">
+          <span class="model-tag tag-cognitive">Cognitive</span>
+          <span class="model-tag tag-design">Taxonomy</span>
+        </div>
+      </div>
+    </div>
+    <div class="model-card-body">
+      <div>
+        <div class="model-section-label">What It Is</div>
+        <p>Benjamin Bloom's 1956 taxonomy organized cognitive learning into a hierarchy of six levels. The 2001 revision by Anderson and Krathwohl renamed and reordered the levels to: <strong>Remember</strong> (recall facts), <strong>Understand</strong> (explain ideas), <strong>Apply</strong> (use knowledge in new situations), <strong>Analyze</strong> (break down components), <strong>Evaluate</strong> (make judgments), <strong>Create</strong> (produce something new). The revision also added a second dimension — the Knowledge Dimension — distinguishing factual, conceptual, procedural, and metacognitive knowledge. The practical impact: questions targeting different Bloom levels require fundamentally different cognitive effort and produce different evidence of learning.</p>
+      </div>
+      <div>
+        <div class="model-section-label">Strengths &amp; Limitations</div>
+        <ul>
+          <li><strong>Strengths:</strong> The most widely used framework in education globally. Provides precise vocabulary for writing learning objectives ("the student will be able to <em>analyze</em>..."). The revised taxonomy's verb lists give question writers direct guidance on what "apply-level" or "evaluate-level" language looks like. Well-supported by decades of research.</li>
+          <li><strong>Limitations:</strong> The hierarchy is not always sequential — students can sometimes create before they fully analyze. Overused as a checklist without genuine attention to whether questions actually operate at the claimed level. Does not address motivation, affect, or transfer — only cognitive depth.</li>
+        </ul>
+      </div>
+      <div class="model-card-folio">
+        <span class="folio-verdict verdict-adopt">Core Adoption</span>
+        <div class="model-section-label">Folio Relevance</div>
+        <p>Bloom's Revised Taxonomy is Folio's primary tool for question design. Folio's founding principle — "questions target reasoning, not recall" — is a direct commitment to operating at Apply level and above. Every question in Folio's practice sets should carry a Bloom level tag. The POC's 8 practice questions should be audited against the taxonomy: how many are Remember-level (a problem), and how many are Apply or Analyze (the target)? Bloom also governs the spiral — prior-concept questions in later modules can and should elevate in Bloom level as the student's knowledge base grows.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 03: Gagné -->
+  <div class="model-card">
+    <div class="model-card-header">
+      <div class="model-number-badge">03</div>
+      <div class="model-header-text">
+        <h3>Gagné's Nine Events of Instruction</h3>
+        <div class="model-meta">
+          <span class="model-tag tag-cognitive">Cognitive</span>
+          <span class="model-tag tag-design">Lesson Design</span>
+        </div>
+      </div>
+    </div>
+    <div class="model-card-body">
+      <div>
+        <div class="model-section-label">What It Is</div>
+        <p>Robert Gagné's model (1965, refined through the 1980s) specifies nine instructional events that mirror the internal cognitive processes of learning: (1) Gain attention, (2) Inform learner of objectives, (3) Stimulate recall of prior learning, (4) Present stimulus material, (5) Provide learning guidance, (6) Elicit performance, (7) Provide feedback, (8) Assess performance, (9) Enhance retention and transfer. Each event corresponds to a specific cognitive process Gagné identified from information processing theory. The model was highly influential in military and corporate training design and in the early development of computer-based instruction.</p>
+      </div>
+      <div>
+        <div class="model-section-label">Strengths &amp; Limitations</div>
+        <ul>
+          <li><strong>Strengths:</strong> Extremely practical — maps directly to lesson structure. Events 1–3 (attention, objectives, prior knowledge recall) and 6–8 (practice, feedback, assessment) are particularly well-grounded in cognitive science. Provides a complete checklist for any instructional experience. Highly applicable to digital learning contexts.</li>
+          <li><strong>Limitations:</strong> Prescriptive — in practice, the nine events feel mechanical if applied rigidly to every lesson. Event 2 (state objectives) is often skipped in consumer-facing products because it kills curiosity. The model doesn't address student motivation as a design variable. Best applied selectively.</li>
+        </ul>
+      </div>
+      <div class="model-card-folio">
+        <span class="folio-verdict verdict-adopt">Deep Structural Adoption</span>
+        <div class="model-section-label">Folio Relevance</div>
+        <p>Folio's POC already executes most of Gagné's events: Event 1 (Wonder Hook = gain attention), Event 3 (spiral practice = stimulate prior learning recall), Event 5 (worked examples = guidance), Event 6 (adaptive questions = elicit performance), Event 7 (diagnostic feedback = targeted feedback). Folio skips Event 2 intentionally — stating objectives kills the wonder hook's effect. The Folio loop is essentially Gagné's nine events reordered for a curiosity-first, mastery-driven digital product. This framing is valuable for communicating Folio's pedagogical rigor to educators.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 09: Smith/Ragan -->
+  <div class="model-card">
+    <div class="model-card-header">
+      <div class="model-number-badge">09</div>
+      <div class="model-header-text">
+        <h3>Smith/Ragan Model</h3>
+        <div class="model-meta">
+          <span class="model-tag tag-cognitive">Cognitive</span>
+          <span class="model-tag tag-systems">Systems Design</span>
+        </div>
+      </div>
+    </div>
+    <div class="model-card-body">
+      <div>
+        <div class="model-section-label">What It Is</div>
+        <p>Patricia Smith and Tillman Ragan's model (first edition 1993) is grounded in cognitive and information processing theory and is one of the most thorough treatments of instructional strategy design. It emphasizes three main inputs into any design decision: the learner, the learning context, and the learning task. It distinguishes between declarative knowledge (knowing what), procedural knowledge (knowing how), and conceptual/principle knowledge — and argues that different content types require fundamentally different instructional strategies. The model is particularly strong on the relationship between strategy selection and content type.</p>
+      </div>
+      <div>
+        <div class="model-section-label">Strengths &amp; Limitations</div>
+        <ul>
+          <li><strong>Strengths:</strong> The content-type/strategy distinction is highly practical. It explains why a lesson on map projections (conceptual knowledge) should be structured very differently from a lesson on calculating scale distances (procedural knowledge). This has direct application to Folio's question design taxonomy.</li>
+          <li><strong>Limitations:</strong> Primarily a textbook framework — comprehensive but not widely used as a practitioner tool outside academic ID programs. Its comprehensiveness makes it unwieldy for rapid content development.</li>
+        </ul>
+      </div>
+      <div class="model-card-folio">
+        <span class="folio-verdict verdict-partial">Principle-Level Adoption</span>
+        <div class="model-section-label">Folio Relevance</div>
+        <p>Smith &amp; Ragan's content-type distinction is worth embedding in Folio's content taxonomy. When a new concept is being introduced, Folio should classify it: is this declarative (know that latitude lines run east-west), procedural (calculate distance using scale), or conceptual/principle (understand why Mercator projection distorts area)? That classification determines the instructional strategy. It should be a field in Folio's content metadata, not a post-hoc tag.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 13: Backward Design -->
+  <div class="model-card">
+    <div class="model-card-header">
+      <div class="model-number-badge">13</div>
+      <div class="model-header-text">
+        <h3>Backward Design — McTighe &amp; Wiggins</h3>
+        <div class="model-meta">
+          <span class="model-tag tag-cognitive">Cognitive</span>
+          <span class="model-tag tag-design">Curriculum Design</span>
+        </div>
+      </div>
+    </div>
+    <div class="model-card-body">
+      <div>
+        <div class="model-section-label">What It Is</div>
+        <p>Jay McTighe and Grant Wiggins formalized Backward Design in <em>Understanding by Design</em> (1998). The model inverts traditional curriculum planning: instead of starting with content and activities, it starts with the desired end — what should the student understand deeply — and works backward through three stages: (1) Identify desired results (enduring understandings + essential questions), (2) Determine acceptable evidence (what would prove deep understanding?), (3) Plan learning experiences (now, what activities will get them there?). The key contribution is the distinction between "coverage" (we taught it) and "understanding" (they got it). Essential questions are open-ended and drive inquiry rather than recall.</p>
+      </div>
+      <div>
+        <div class="model-section-label">Strengths &amp; Limitations</div>
+        <ul>
+          <li><strong>Strengths:</strong> Directly attacks the most common failure in curriculum design — teaching content without asking whether students can transfer and use it. "Enduring understandings" force specificity about what matters most. The essential question format produces the kind of thinking-out-loud prompts that Folio's wonder hooks attempt. Extremely influential in K–12 education specifically.</li>
+          <li><strong>Limitations:</strong> Can produce overly abstract "enduring understandings" if done carelessly. Stage 2 (acceptable evidence) is often treated too superficially. Doesn't prescribe instructional strategy — just sequencing logic.</li>
+        </ul>
+      </div>
+      <div class="model-card-folio">
+        <span class="folio-verdict verdict-adopt">Core Adoption</span>
+        <div class="model-section-label">Folio Relevance</div>
+        <p>Backward Design should govern how Folio scopes every new module. Before any content is written, the team should answer: (1) What is the enduring understanding — what should a student still understand about map projections a year from now? (2) What assessment evidence would confirm that understanding — not completion, not a correct answer, but genuine transfer? (3) What practice experiences will produce that understanding? This is exactly aligned with Folio's "why-over-rote" principle. Backward Design gives that principle a rigorous operational structure.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="section-divider"></div>
+
+<!-- SECTION 3: MOTIVATION MODELS -->
+<div class="section-header">
+  <div class="section-number">Section 03 — Motivational Design Models</div>
+  <h2 class="section-title">Keeping Learners Engaged</h2>
+  <p class="section-intro">Cognitive models explain how knowledge is acquired. Motivational models explain why students keep going — or quit. These are particularly important for Folio, where self-paced learning without a teacher present depends entirely on intrinsic engagement.</p>
+</div>
+
+<div class="models-grid">
+
+  <!-- 07: ARCS -->
+  <div class="model-card">
+    <div class="model-card-header">
+      <div class="model-number-badge">07</div>
+      <div class="model-header-text">
+        <h3>Keller's ARCS Model of Motivational Design</h3>
+        <div class="model-meta">
+          <span class="model-tag tag-motivational">Motivational</span>
+          <span class="model-tag tag-design">Design Model</span>
+        </div>
+      </div>
+    </div>
+    <div class="model-card-body">
+      <div>
+        <div class="model-section-label">What It Is</div>
+        <p>John Keller developed the ARCS model in 1987 to address the underrepresentation of motivation theory in instructional design. ARCS identifies four conditions that must all be present for a learner to be motivated: <strong>Attention</strong> (perceptual arousal and inquiry — getting and keeping interest), <strong>Relevance</strong> (learner perceives the content as personally meaningful), <strong>Confidence</strong> (learner believes they can succeed — not too easy, not impossible), and <strong>Satisfaction</strong> (outcomes feel rewarding — intrinsically or extrinsically). Keller later added a fifth component, <strong>Volition</strong> (the learner's will to persist), producing the ARCS-V model. Each component has a set of design strategies associated with it.</p>
+      </div>
+      <div>
+        <div class="model-section-label">Strengths &amp; Limitations</div>
+        <ul>
+          <li><strong>Strengths:</strong> Practically actionable — each component maps to specific design decisions. Attention maps to Folio's wonder hook. Confidence maps to difficulty calibration and adaptive scaffolding. Satisfaction maps to diagnostic feedback quality. Widely researched and validated across age groups and subjects. Directly applicable to self-paced digital learning where motivation entirely depends on the system itself.</li>
+          <li><strong>Limitations:</strong> The four components don't always operate independently — Confidence and Relevance are deeply intertwined. Some critics argue ARCS treats motivation as primarily extrinsic. The model describes what needs to be present but is less prescriptive about how to produce it in a specific context.</li>
+        </ul>
+      </div>
+      <div class="model-card-folio">
+        <span class="folio-verdict verdict-adopt">Core Adoption</span>
+        <div class="model-section-label">Folio Relevance</div>
+        <p>ARCS should be Folio's primary motivational audit framework. Every module should be reviewable against all four components: Does the wonder hook create genuine Attention? Does the real-world application context create Relevance? Does adaptive difficulty maintain Confidence without trivializing challenge? Does diagnostic feedback — not just "correct/incorrect" — create Satisfaction? Folio's founding principle of why-over-rote is, in ARCS terms, a commitment to Relevance. The spiral curriculum maintains Confidence by ensuring prior skills don't atrophy. ARCS validates both.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 08: MOM -->
+  <div class="model-card">
+    <div class="model-card-header">
+      <div class="model-number-badge">08</div>
+      <div class="model-header-text">
+        <h3>Hardré &amp; Miller's Motivating Opportunities Model (MOM)</h3>
+        <div class="model-meta">
+          <span class="model-tag tag-motivational">Motivational</span>
+          <span class="model-tag tag-design">Design Model</span>
+        </div>
+      </div>
+    </div>
+    <div class="model-card-body">
+      <div>
+        <div class="model-section-label">What It Is</div>
+        <p>Patricia Hardré and Raymond Miller developed MOM as an expansion of ARCS for K–12 educational contexts specifically. Where ARCS was originally developed for adult training and corporate learning, MOM addresses the distinct motivational dynamics of younger learners: teacher-student relationship, social belonging, competence beliefs, and the role of extrinsic pressure from grades and parents. MOM identifies five motivational factors: Attention, Relevance, Confidence, Satisfaction (all from ARCS) plus a fifth — <strong>Opportunity</strong> — which addresses access, choice, and the learner's sense of control over their own learning path. MOM also places greater emphasis on individual learner differences and the social context of learning.</p>
+      </div>
+      <div>
+        <div class="model-section-label">Strengths &amp; Limitations</div>
+        <ul>
+          <li><strong>Strengths:</strong> Explicitly designed for K–12, which makes it more directly applicable to Folio than standard ARCS. The Opportunity dimension addresses learner agency — critical for adaptive systems where the student's experience of control matters. Addresses the motivational implications of adaptive routing itself (a student who feels routed to "easy" content may feel stigmatized).</li>
+          <li><strong>Limitations:</strong> Less widely researched than ARCS. The teacher-relationship component is difficult to replicate in a purely digital product without a human instructor present. Some of MOM's design implications require social infrastructure Folio doesn't have in Phase 1.</li>
+        </ul>
+      </div>
+      <div class="model-card-folio">
+        <span class="folio-verdict verdict-partial">Targeted Adoption</span>
+        <div class="model-section-label">Folio Relevance</div>
+        <p>MOM's Opportunity dimension is the unique contribution. Folio's adaptive routing creates a real risk: if a student perceives remediation routing as punishment or labels them as "behind," motivation collapses. MOM demands that Folio's UX framing of remediation always maintains learner agency and dignity — "Let's go deeper on this" rather than "You got this wrong." This is a design principle, not a content principle, and should be embedded in Folio's UX standards document.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="section-divider"></div>
+
+<!-- SECTION 4: OTHER FRAMEWORKS -->
+<div class="section-header">
+  <div class="section-number">Section 04 — Additional Frameworks</div>
+  <h2 class="section-title">Specialized &amp; Supplementary Models</h2>
+  <p class="section-intro">These models offer targeted contributions to specific aspects of Folio's design — some are highly relevant; others are worth understanding to avoid reinventing solved problems.</p>
+</div>
+
+<div class="models-grid">
+
+  <!-- 06: Esseff -->
+  <div class="model-card">
+    <div class="model-card-header">
+      <div class="model-number-badge">06</div>
+      <div class="model-header-text">
+        <h3>Esseff's Guaranteed Learning Model</h3>
+        <div class="model-meta">
+          <span class="model-tag tag-process">Process Model</span>
+          <span class="model-tag tag-cognitive">Mastery Focus</span>
+        </div>
+      </div>
+    </div>
+    <div class="model-card-body">
+      <div>
+        <div class="model-section-label">What It Is</div>
+        <p>Drs. Peter and Mary Esseff developed the Guaranteed Learning (GL) model as a task-analysis-centric approach to instructional design. Its central claim is that any task, if it can be performed, can be taught — and that the designer's job is to decompose performance into its enabling conditions with sufficient precision that the instruction cannot fail. The model begins with terminal objectives (what must the learner be able to do at the end), then works backward to identify all enabling objectives, classify each by learning type (cognitive, psychomotor, affective), and sequence them from simplest to most complex. The "guarantee" is the designer's commitment that if the instruction is followed correctly, learning will occur.</p>
+      </div>
+      <div>
+        <div class="model-section-label">Strengths &amp; Limitations</div>
+        <ul>
+          <li><strong>Strengths:</strong> The enabling objectives decomposition is extremely rigorous — it surfaces prerequisite knowledge gaps that looser models miss. The learning type classification prevents mismatched instruction (treating a psychomotor skill like a cognitive one). Strong alignment with mastery learning philosophy.</li>
+          <li><strong>Limitations:</strong> Less well-known outside specialized ID circles. The "guarantee" framing is aspirational — it assumes the learner follows the instruction, which self-paced adaptive systems cannot guarantee. Primarily developed for training contexts, not discovery-based K–12 learning.</li>
+        </ul>
+      </div>
+      <div class="model-card-folio">
+        <span class="folio-verdict verdict-partial">Principle-Level Adoption</span>
+        <div class="model-section-label">Folio Relevance</div>
+        <p>GL's enabling objectives decomposition is directly applicable to Folio's diagnostic feedback design. When a student gets a question wrong, Folio's system needs to know which enabling objective failed — was it the concept definition, the procedural application, or the transfer to a new context? This maps to GL's learning type classification and should inform how Folio tags misconceptions in its content pipeline. The model also reinforces Folio's spiral logic: the spiral exists because GL would identify every concept as an enabling condition for subsequent concepts.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10: Morrison/Ross/Kemp -->
+  <div class="model-card">
+    <div class="model-card-header">
+      <div class="model-number-badge">10</div>
+      <div class="model-header-text">
+        <h3>Morrison, Ross &amp; Kemp Model</h3>
+        <div class="model-meta">
+          <span class="model-tag tag-systems">Systems Design</span>
+          <span class="model-tag tag-process">Non-Linear</span>
+        </div>
+      </div>
+    </div>
+    <div class="model-card-body">
+      <div>
+        <div class="model-section-label">What It Is</div>
+        <p>The Morrison, Ross, and Kemp model (evolved from Jerrold Kemp's earlier model) is notable for being explicitly non-linear. Unlike ADDIE, it presents nine design elements as an oval/circle without a fixed starting point: instructional problems, learner characteristics, task analysis, instructional objectives, content sequencing, instructional strategies, design of message, development of instruction, and evaluation instruments. The model argues that different projects legitimately start at different points, and that all elements are continuously revisited rather than completed in sequence. It also places ongoing support services and formative evaluation as central, not terminal, activities.</p>
+      </div>
+      <div>
+        <div class="model-section-label">Strengths &amp; Limitations</div>
+        <ul>
+          <li><strong>Strengths:</strong> The non-linear framing matches how design actually works in practice — rarely in clean sequential phases. The continuous evaluation emphasis aligns with iterative development. The learner characteristics element as a persistent concern (not just an upfront analysis) is particularly useful for an adaptive system.</li>
+          <li><strong>Limitations:</strong> The non-linear structure that is its strength can also produce undisciplined design processes without clear milestones. Less prescriptive than ADDIE on what each element produces. Better as a thinking tool than a project management framework.</li>
+        </ul>
+      </div>
+      <div class="model-card-folio">
+        <span class="folio-verdict verdict-reference">Reference Only</span>
+        <div class="model-section-label">Folio Relevance</div>
+        <p>The MRK model's value to Folio is philosophical: it provides evidence that non-linear, iterative ID processes are academically legitimate. Folio doesn't need to justify departing from ADDIE's linearity — the field has already done that. The model also reinforces that learner characteristics should be a persistent concern in Folio's design, which connects to the adaptive routing and difficulty calibration work in Phase 2.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 11: OAR -->
+  <div class="model-card">
+    <div class="model-card-header">
+      <div class="model-number-badge">11</div>
+      <div class="model-header-text">
+        <h3>Objectives–Activities–Resources (OAR) Model</h3>
+        <div class="model-meta">
+          <span class="model-tag tag-design">Curriculum Design</span>
+          <span class="model-tag tag-process">Lean</span>
+        </div>
+      </div>
+    </div>
+    <div class="model-card-body">
+      <div>
+        <div class="model-section-label">What It Is</div>
+        <p>OAR is one of the simplest coherent instructional design frameworks: every learning experience is defined by three aligned elements — the <strong>Objective</strong> (what the learner will achieve), the <strong>Activity</strong> (what they will do to achieve it), and the <strong>Resources</strong> (what materials and supports they will use). Alignment among these three is the core quality criterion — an activity that doesn't directly target the objective is waste; a resource that isn't connected to an activity is noise. Though simple, the model's emphasis on alignment is a direct precursor to backward design and is foundational in teacher preparation programs.</p>
+      </div>
+      <div>
+        <div class="model-section-label">Strengths &amp; Limitations</div>
+        <ul>
+          <li><strong>Strengths:</strong> Extremely lean and fast to apply. The alignment principle is universally valid regardless of subject, grade, or modality. Works as a rapid quality check on any lesson or question: does this activity directly address the objective? Good for non-specialists like teachers or solo founders who need a practical heuristic.</li>
+          <li><strong>Limitations:</strong> Too simple for complex instructional design. Doesn't address sequencing, motivation, assessment design, or mastery criteria. A lesson can satisfy OAR alignment and still be pedagogically weak if the objective itself is poorly formed.</li>
+        </ul>
+      </div>
+      <div class="model-card-folio">
+        <span class="folio-verdict verdict-partial">Embedded as Check</span>
+        <div class="model-section-label">Folio Relevance</div>
+        <p>OAR's alignment principle should be a quality check in Folio's content review process. Every practice question should be reviewable against three questions: What objective does this target? What cognitive activity does answering it require? What prior knowledge (resource) does it depend on? If those three can't be articulated, the question doesn't belong in the set. This is a lightweight, fast check that can be applied during educator verification without adding process overhead.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 14: Bruner -->
+  <div class="model-card">
+    <div class="model-card-header">
+      <div class="model-number-badge">14</div>
+      <div class="model-header-text">
+        <h3>Bruner's Spiral Curriculum &amp; Scaffolding Theory</h3>
+        <div class="model-meta">
+          <span class="model-tag tag-cognitive">Cognitive</span>
+          <span class="model-tag tag-design">Curriculum Structure</span>
+        </div>
+      </div>
+    </div>
+    <div class="model-card-body">
+      <div>
+        <div class="model-section-label">What It Is</div>
+        <p>Jerome Bruner's two most influential contributions to instructional design are the <strong>spiral curriculum</strong> and <strong>scaffolding theory</strong> (the latter developed with Wood and Ross). The spiral curriculum, articulated in <em>The Process of Education</em> (1960), holds that any subject can be taught to any child at any age in some intellectually honest form — and that ideas should revisit concepts at increasing levels of complexity across time, building genuine understanding through repeated engagement rather than one-time coverage. Scaffolding (1976) describes the temporary support structures an expert provides to allow a novice to accomplish tasks they couldn't manage alone — and the critical requirement that scaffolding be withdrawn progressively as competence develops. Together they define a curriculum philosophy: start somewhere honest, return often, support then release.</p>
+      </div>
+      <div>
+        <div class="model-section-label">Strengths &amp; Limitations</div>
+        <ul>
+          <li><strong>Strengths:</strong> The spiral curriculum is the theoretical backbone of Saxon math's success and Folio's curriculum model. Empirically well-supported. The scaffolding model maps directly to hint progressions, worked examples, and adaptive remediation. Both principles are deeply practical at the lesson and curriculum scale. Bruner's insistence on intellectual honesty — teach the real idea, not a dumbed-down proxy — aligns directly with Folio's why-over-rote commitment.</li>
+          <li><strong>Limitations:</strong> Bruner's spiral doesn't specify the mechanics of how to revisit concepts — what changes between visits, how depth is calibrated, how you know when to advance. Saxon provides one answer (practice set ratios). Scaffolding theory is also better as a principle than a recipe — it doesn't prescribe exactly when to withdraw support.</li>
+        </ul>
+      </div>
+      <div class="model-card-folio">
+        <span class="folio-verdict verdict-adopt">Foundational — Core DNA</span>
+        <div class="model-section-label">Folio Relevance</div>
+        <p>Bruner is the source. The Saxon model is one implementation of Bruner's spiral. Folio is building another. The key distinction: Saxon implements the spiral primarily through practice set composition (60-70% prior concept questions). Folio extends this by also advancing the <em>Bloom level</em> of spiral questions over time — revisiting map scale not just as recall, but as application, then analysis, as the student's knowledge base matures. Scaffolding governs hint progressions and worked examples: maximum support at first encounter, progressively reduced in subsequent spiral appearances. This is the clearest articulation of Folio's pedagogical DNA.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- SYNTHESIS TABLE -->
+<div class="synthesis-section">
+  <div class="section-number">Synthesis</div>
+  <h2 class="section-title">Model Comparison at a Glance</h2>
+  <p class="section-intro">How each framework maps to Folio's Phase 2 needs — process design, content architecture, motivation, and mastery.</p>
+
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th>Model</th>
+        <th>Primary Layer</th>
+        <th>Folio Verdict</th>
+        <th>What Folio Takes From It</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Bruner Spiral + Scaffolding</strong></td>
+        <td>Curriculum Structure</td>
+        <td><span class="dot-adopt">●</span> Core DNA</td>
+        <td>Spiral practice set composition; scaffolded hint progressions; Bloom-level escalation across revisits</td>
+      </tr>
+      <tr>
+        <td><strong>Bloom's Taxonomy (Revised)</strong></td>
+        <td>Cognitive Depth</td>
+        <td><span class="dot-adopt">●</span> Core Adoption</td>
+        <td>Question design vocabulary; Apply-and-above commitment; Bloom tags on all questions</td>
+      </tr>
+      <tr>
+        <td><strong>Backward Design (McTighe/Wiggins)</strong></td>
+        <td>Module Scoping</td>
+        <td><span class="dot-adopt">●</span> Core Adoption</td>
+        <td>Enduring understandings before content; assessment evidence before activities</td>
+      </tr>
+      <tr>
+        <td><strong>Keller's ARCS</strong></td>
+        <td>Motivation</td>
+        <td><span class="dot-adopt">●</span> Core Adoption</td>
+        <td>Motivational audit framework: Attention (wonder hook), Relevance (real-world framing), Confidence (adaptive difficulty), Satisfaction (diagnostic feedback)</td>
+      </tr>
+      <tr>
+        <td><strong>Gagné's Nine Events</strong></td>
+        <td>Lesson Structure</td>
+        <td><span class="dot-adopt">●</span> Deep Structural</td>
+        <td>Folio loop maps to Events 1,3,5,6,7,8 — validates existing structure; Event 2 intentionally skipped</td>
+      </tr>
+      <tr>
+        <td><strong>SAM1 (Allen)</strong></td>
+        <td>Dev Process</td>
+        <td><span class="dot-adopt">●</span> Adopted</td>
+        <td>Prototype → Review → Pilot → Revise → Ship cycle; alpha/beta/gold status language</td>
+      </tr>
+      <tr>
+        <td><strong>Rapid Prototyping</strong></td>
+        <td>Dev Process</td>
+        <td><span class="dot-adopt">●</span> Adopted</td>
+        <td>Formalizes Folio's existing instinct; demands explicit exit criteria per cycle</td>
+      </tr>
+      <tr>
+        <td><strong>ADDIE</strong></td>
+        <td>Process</td>
+        <td><span class="dot-partial">●</span> Partial</td>
+        <td>Analysis phase checklist when entering new subjects/grades; Evaluation phase = educator verification</td>
+      </tr>
+      <tr>
+        <td><strong>Dick &amp; Carey</strong></td>
+        <td>Systems Design</td>
+        <td><span class="dot-partial">●</span> Reference</td>
+        <td>Mastery criteria before content; formative evaluation loops validate Folio's pipeline structure</td>
+      </tr>
+      <tr>
+        <td><strong>Smith/Ragan</strong></td>
+        <td>Content Classification</td>
+        <td><span class="dot-partial">●</span> Principle-Level</td>
+        <td>Declarative/procedural/conceptual content classification → strategy selection metadata</td>
+      </tr>
+      <tr>
+        <td><strong>Esseff Guaranteed Learning</strong></td>
+        <td>Task Analysis</td>
+        <td><span class="dot-partial">●</span> Principle-Level</td>
+        <td>Enabling objectives decomposition → misconception taxonomy; learning type classification</td>
+      </tr>
+      <tr>
+        <td><strong>MOM (Hardré &amp; Miller)</strong></td>
+        <td>K–12 Motivation</td>
+        <td><span class="dot-partial">●</span> Targeted</td>
+        <td>Opportunity dimension → remediation UX framing; learner agency in adaptive routing</td>
+      </tr>
+      <tr>
+        <td><strong>OAR Model</strong></td>
+        <td>Quality Check</td>
+        <td><span class="dot-partial">●</span> Embedded Check</td>
+        <td>Alignment audit in educator verification: objective → activity → resource for every question</td>
+      </tr>
+      <tr>
+        <td><strong>Morrison/Ross/Kemp</strong></td>
+        <td>Process Philosophy</td>
+        <td><span class="dot-skip">●</span> Reference Only</td>
+        <td>Validates non-linear iterative development; persistent learner characteristics concern</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- BRUNER CALLOUT -->
+<div class="bruner-section">
+  <div class="bruner-callout">
+    <h3>On Bruner, Saxon, and Folio's Distinct Position</h3>
+    <p>Saxon math operationalizes Bruner's spiral through a single mechanism: practice set composition ratios (~30% new, ~70% prior). This produces measurable results, but it's essentially a delivery optimization — spaced practice with prior concepts. Folio has the opportunity to go further in two ways that Saxon cannot. First, Folio's adaptive routing means the spiral can respond to individual mastery state — prior-concept questions in a practice set can be selected based on what this specific student has struggled with, not just what was covered three modules ago. Second, Folio can escalate the Bloom level of spiral appearances — the first time a student sees map scale, it's Apply-level. Three modules later, it's Analyze-level. Six modules later, it's used as prior knowledge in an Evaluate-level question about trade route decisions. Saxon revisits concepts at the same cognitive level indefinitely. Folio deepens them. That distinction is Folio's genuine pedagogical innovation — and it has its theoretical grounding in Bruner, not Saxon.</p>
+  </div>
+</div>
+
+<!-- FOLIO SYNTHESIS -->
+<div class="synthesis-box">
+  <div class="wrapper">
+    <h2>Folio's Synthesized Instructional Design Model</h2>
+    <p>No single framework describes what Folio is building. Folio's curriculum model is a synthesis — drawing the most defensible principles from each tradition and integrating them into a coherent whole. The synthesis can be described in five stacked commitments:</p>
+
+    <div class="synthesis-pillars">
+      <div class="pillar-card">
+        <h4>1. Design Backward</h4>
+        <p>Every module begins with an enduring understanding and acceptable evidence of mastery — before a single question is written.</p>
+        <span class="pillar-source">← McTighe &amp; Wiggins · Dick &amp; Carey</span>
+      </div>
+      <div class="pillar-card">
+        <h4>2. Think at Depth</h4>
+        <p>All questions target Apply level or above. Bloom level tags are mandatory. Recall questions are not Folio questions.</p>
+        <span class="pillar-source">← Bloom's Revised Taxonomy · Bruner</span>
+      </div>
+      <div class="pillar-card">
+        <h4>3. Spiral and Deepen</h4>
+        <p>Prior concepts appear in every subsequent module's practice set. Each revisit escalates Bloom level. Scaffolding progressively withdraws.</p>
+        <span class="pillar-source">← Bruner · Saxon · Gagné</span>
+      </div>
+      <div class="pillar-card">
+        <h4>4. Motivate by Design</h4>
+        <p>Every lesson is audited against ARCS: wonder hook (Attention), real-world stakes (Relevance), calibrated difficulty (Confidence), diagnostic feedback (Satisfaction).</p>
+        <span class="pillar-source">← Keller ARCS · MOM · Gagné</span>
+      </div>
+      <div class="pillar-card">
+        <h4>5. Build Iteratively, Verify Ruthlessly</h4>
+        <p>SAM1 cycle: Prototype → Educator Verify → Pilot → Revise → Ship. Nothing reaches students without a named educator sign-off.</p>
+        <span class="pillar-source">← SAM · Rapid Prototyping · ADDIE</span>
+      </div>
+      <div class="pillar-card">
+        <h4>The Through-Line</h4>
+        <p>Every principle above serves one goal: the student understands why, not just what. That commitment — Bruner's insistence on intellectual honesty — is Folio's founding pedagogical act.</p>
+        <span class="pillar-source">← Jerome Bruner · Folio Founding Principle</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <strong>Folio Interactive</strong> · Instructional Design Models Reference · Phase 2 Working Document · April 2026 · Confidential — Internal Use Only
+</footer>
+
+</body>
+</html>

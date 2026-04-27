@@ -33,8 +33,8 @@ Solo founder: Rob. Not a developer. All build tasks must be executable without c
 - No VARK or learning style routing. Multimodal by default achieves accessibility without pseudoscience.
 
 ## Content Pipeline (Three Stages)
-1. Draft — written by Rob
-2. Ready for Review — flagged by Rob, reviewed by educator
+1. Draft — written by Rob Couillard
+2. Ready for Review — flagged by Rob Couillard, reviewed by educator
 3. Approved — educator sign-off. Nothing ships without this.
 
 ## Pedagogical Principles (In Priority Order)
@@ -43,6 +43,38 @@ Solo founder: Rob. Not a developer. All build tasks must be executable without c
 3. Spiral curriculum — prior concepts in every practice set
 4. Adaptive remediation — wrong answers trigger targeted re-teaching
 5. Why-over-rote — questions target reasoning, not recall
+
+## Pedagogical DNA — Instructional Design Model
+
+Folio's curriculum model is a synthesis. The Saxon-inspired spiral is the
+implementation floor, not the ceiling. The theoretical source is Jerome
+Bruner. The operational model has five pillars — full detail in
+`01 - Core/folio-id-framework.md`.
+
+**Five pillars (summary for session context):**
+1. **Design backward** — enduring understanding and mastery evidence defined
+   before any content is written (McTighe & Wiggins)
+2. **Think at depth** — all questions target Bloom's Apply level or above;
+   Bloom tags mandatory on every question; content classified as declarative,
+   procedural, or conceptual-principle before strategy is chosen (Smith & Ragan)
+3. **Spiral and deepen** — prior concepts in every practice set; Bloom level
+   escalates across revisits (not just repeated at same depth); scaffolding
+   withdraws progressively (Bruner)
+4. **Motivate by design** — every module audited against ARCS conditions:
+   Attention (wonder hook), Relevance (real-world stakes), Confidence
+   (adaptive difficulty), Satisfaction (diagnostic feedback); remediation
+   routing must never feel like a penalty (MOM — Hardré & Miller)
+5. **Build iteratively, verify ruthlessly** — SAM1 cycle: Prototype → Educator
+   Verify → Pilot → Revise → Ship; Alpha/Beta/Gold status language; nothing
+   reaches students without named educator sign-off
+
+**Key distinction from Saxon:** Saxon revisits prior concepts at the same
+Bloom level indefinitely. Folio deepens them. That escalation is Folio's
+genuine pedagogical contribution.
+
+**Content pipeline voice rules:** See `01 - Core/folio-voice.md` for
+wonder hook format, grade register, diagnostic feedback structure, spiral
+tagging, and the real-geography rule.
 
 ## Brand Voice (Summary)
 Warm but never soft. Precise but never cold. Speaks like a teacher who loves their subject. Never talks down. Treats struggle as natural. Diagnostic, not cheering.
