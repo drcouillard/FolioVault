@@ -1,4 +1,4 @@
-﻿# Phase Tracker
+# Phase Tracker
 
 Living snapshot of **where Folio Interactive is in the build**, derived from **Current Phase** and related guidance in `CLAUDE.md`. Update this file whenever phase boundaries move; agents should read it alongside `CLAUDE.md` before recommending work.
 

@@ -24,8 +24,6 @@ Success means learners experience real intellectual demand without being abandon
 
 **“Could you patent the sun?”** — Jonas Salk.
 
-The **base product is free. Always.** That is **structural**, not a temporary marketing line: pricing and roadmap decisions must preserve a meaningful free core. **AI capabilities** may exist as a **paid enhancement layer**, but the platform must remain **fully usable without AI** and without paywalling the learner’s core path.
-
 ---
 
 ## Audiences
@@ -55,11 +53,24 @@ All messaging and UX choices should default to the **primary** learner first, th
 
 ## Positioning
 
-- **Category:** Rigorous, personalized **K–12** learning software — **web-first**, not a native app until **after pilot**.
-- **First vertical:** **World Geography**, with **Map Skills** as the **first module** — a concrete wedge that grounds the product in observable skills and rich visuals.
-- **Pedagogical spine:** **UDL**, multimodal presentation, **spiral** practice, **adaptive remediation**, and **why-over-rote** questioning — see `CLAUDE.md` for the ordered list and the **three-stage content pipeline** (Draft → Ready for Review → Approved).
-- **Quality bar:** **Expert educator verification** before anything ships from draft; nothing is “verified” without a **named educator sign-off**.
-- **Operator reality:** Solo founder **Rob** is **not a developer**; execution guidance should favor steps that move Folio toward a **working pilot with real students** without assuming deep engineering literacy unless explicitly scoped.
+- **Category:** Rigorous, personalized K–12 learning software — web-first,
+  no native mobile app until post-pilot.
+- **First vertical:** World Geography, with Map Skills as the first module —
+  a concrete wedge grounded in observable skills and rich visuals.
+- **Pedagogical spine:** Folio's instructional design is a synthesis of five
+  commitments: design backward from enduring understanding (McTighe & Wiggins),
+  target Apply-level thinking and above (Bloom's Revised Taxonomy), spiral and
+  deepen prior concepts across every module (Bruner), motivate by design using
+  ARCS conditions (Keller), and build iteratively with ruthless educator
+  verification (SAM1). Saxon math's practice-set structure is Folio's
+  implementation floor, not its ceiling — Folio escalates Bloom level across
+  spiral revisits, which Saxon does not. See `folio-id-framework.md` for the
+  full model.
+- **Quality bar:** Expert educator verification before anything ships. Nothing
+  moves from Alpha to Beta without a named educator sign-off.
+- **Operator reality:** Solo founder Rob Couillard is not a developer.
+  Execution guidance must move Folio toward a working pilot with real students
+  without assuming engineering literacy unless explicitly scoped.
 
 ---
 
