@@ -34,20 +34,21 @@ Ask these questions in a conversational way — don't dump a form. Group natural
 1. What does this brand do? (product/service, in plain language)
 2. Why does it exist — what problem does it solve or need does it fill?
 3. Who is it for? (be specific — demographics, behaviors, mindset)
-4. What does it *not* want to be? (anti-positioning)
+4. Is there a non-negotiable commitment underneath the positioning that should be stated explicitly? (Examples: free access, sustainability pledge, ethical line you won't cross. If no, skip.)
+5. What does it *not* want to be? (anti-positioning)
 **Block B — The Feeling**
-5. When someone interacts with this brand, what should they feel?
-6. What 3–5 words describe the brand's personality?
-7. If this brand were a person, how would they talk? What would they never say?
+6. When someone interacts with this brand, what should they feel?
+7. What 3–5 words describe the brand's personality?
+8. If this brand were a person, how would they talk? What would they never say?
  
 **Block C — The Market**
-8. Who are the main competitors?
-9. What do those competitors do well? What do they get wrong?
-10. What makes this brand different — not just better, but *different*?
+9. Who are the main competitors?
+10. What do those competitors do well? What do they get wrong?
+11. What makes this brand different — not just better, but *different*?
  
 **Block D — The Future**
-11. What does success look like in 1 year? In 5 years?
-12. Is there a tagline or name direction already, or is that open?
+12. What does success look like in 1 year? In 5 years?
+13. Is there a tagline or name direction already, or is that open?
  
 Record all answers. Do not interpret or editorialize during intake. Capture what the user actually says.
  
@@ -68,6 +69,7 @@ Using the intake answers, build the full identity document. Reference `reference
 | Target Audience Profiles | 2–3 distinct audience segments with detail |
 | Emotional Keywords | 5–8 words capturing the feeling the brand should produce |
 | Positioning Statement | Formal structure: "For [audience] who [need], [brand] is the [category] that [benefit] because [reason to believe]." |
+| Founding Principle | Optional — captures a non-negotiable commitment underneath the positioning (if one exists) |
 | Competitive Differentiation | What specifically sets this brand apart and why it's defensible |
 | Tagline Options | 3 options (not slogans — positioning-rooted, durable, memorable) |
 | Anti-Positioning | What the brand is *not* — guardrails against drift |
