@@ -1,4 +1,4 @@
-﻿# Decisions Log
+# Decisions Log
 
 Locked product decisions are recorded here in **dated** form: **decision**, **date**, and **reasoning** (one sentence). Entries mirror the **Locked Decisions** section in `CLAUDE.md`; do not relitigate these in day-to-day work unless initiating a deliberate change process.
 
@@ -34,6 +34,52 @@ When a locked decision is **added**, **narrowed**, or **revoked**, append a new 
 
 ---
 
+## 2026-04-29
+
+11. **country-profile-rubric.md updated to v2.0 — aligned with folio-id-framework v2, voice-folio v2, and folio-preflight-verifier** — **2026-04-29** — The rubric predated the full instructional design framework and would have produced incomplete module specs that could not pass preflight verification; the revised rubric adds 28 missing fields and sections covering all five ID pillars, the full voice system, and every Checklist B item from the preflight verifier.
+
+12. **Every module opens with a map before any text** — **2026-04-29** — Students must see where the subject sits in physical space before encountering any hook, concept, or question; required fields added to country-profile-rubric.md Part D (Opening Map); minimum two map references per module: one for global position context, one for subject-level physical detail.
+
+13. **Brazil module GEO-SA-BR-001 created as first module in Unit 4 — Latin America & the Caribbean** — **2026-04-29** — Brazil chosen as unit entry point because it contains the Amazon (global climate significance), spans every major South American biome, is the largest economy in the region, and the flying rivers mechanism provides a conceptual anchor that connects physical and human geography in a single transferable idea.
+
+---
+
 ## Gap — 2026-04-24
 **Logo assets not yet exported.**
 Brand guide specifies full mark + wordmark system. No .svg, .png, or .ai files exist anywhere in OneDrive. Assets need to be created or exported before 02 - Brand/assets/ can be populated.
+
+---
+
+# Decisions Log — Folio Interactive
+
+## DECISION-001 — Spiral Curriculum Ratio
+
+**Date:** April 2026 **Status:** LOCKED **Phase:** Phase 2 — Scope & Features
+
+### Decision
+
+Folio standard spiral ratio is **40% new concept questions / 60% prior concept questions** per practice set.
+
+### Rationale
+
+- Saxon's 30/70 ratio was designed for procedural math content, where skill decay is fast without repetition.
+- Folio's primary content type is conceptual-principle (knowing why), which has a slower decay curve.
+- 40/60 provides sufficient new material per module to feel substantive while keeping prior concepts active.
+- The France module spec (GEO-EU-FR-001) already implied this range — this decision confirms it.
+- Folio's Bloom escalation across spiral revisits increases cognitive load per prior question, which makes 30/70 a heavier lift than it appears in Saxon's context.
+
+### Operational Rules
+
+- On a 10-question set: target is 4 new / 6 prior.
+- The 40/60 ratio is a target, not always achievable in early modules. Map Skills (module 1) has no prior pool — its practice set is 100% new by structural necessity. Climate Zones (module 2) can only spiral Map Skills. The ratio becomes fully achievable at module 3 and beyond.
+- Early module deviation from 40/60 is a structural constraint, not a content failure. Document it per module, do not flag it as an error.
+
+### Downstream Impact
+
+- France module spec (GEO-EU-FR-001): update "30–40% new / 60–70% prior (working assumption)" to "40% new / 60% prior — Folio standard (locked DECISION-001)."
+- All future module specs must reference this ratio in the Practice Set Metadata section.
+- Revisit at pilot stage if student data indicates the ratio needs adjustment.
+
+### Do Not Relitigate
+
+This decision is locked until pilot data is collected and a formal change process is initiated.

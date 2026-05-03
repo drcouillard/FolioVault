@@ -100,3 +100,5 @@ Infrastructure build. Vault structure established. Next: populate 01 - Core, mig
 - Never suggest actions that contradict Locked Decisions above
 - When in doubt about brand voice or product direction, check 02 - Brand/
 - All new content drafts go to 05 - Build/review-queue/ before anywhere else
+
+- Authoring workflow and dual-status system locked. See 01 - Core/folio-authoring-workflow.md and 01 - Core/decisions-log.md.

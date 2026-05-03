@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img">
+  <title>Folio Interactive — Brand Mark v2.0</title>
+  <desc>
+    Folio Interactive diamond mark. Four-node symmetrical diamond.
+    Upper left face Sage Teal #1A9068. Upper right face Atlas Blue #1A5C9E.
+    Lower left face Parchment #F3F1E9. Lower right face Slate #5A5950.
+    Solid Deep Blue spine #0F3F72 on vertical axis.
+    Dotted back edge on horizontal axis.
+    Four solid boundary edges — left Blue, right Teal.
+    Four uniform nodes: Apex Deep Blue #0F3F72, Left Atlas Blue #1A5C9E,
+    Right Sage Teal #1A9068, Base Deep Sage #0A4A35.
+    All nodes r=13 outer, r=4.5 inner dot. April 2026.
+  </desc>
+
+  <g transform="translate(100,100)">
+
+    <!-- Filled faces -->
+    <polygon points="0,-72 -57,0 0,0"   fill="#1A9068"/>
+    <polygon points="0,-72 0,0 57,0"    fill="#1A5C9E"/>
+    <polygon points="-57,0 0,0 0,72"    fill="#F3F1E9"/>
+    <polygon points="0,0 57,0 0,72"     fill="#5A5950"/>
+
+    <!-- Spine — Deep Blue vertical axis -->
+    <line x1="0" y1="-72" x2="0" y2="72"
+          stroke="#0F3F72" stroke-width="2.4"
+          stroke-linecap="round"/>
+
+    <!-- Back edge — dotted horizontal, receding depth -->
+    <line x1="-57" y1="0" x2="57" y2="0"
+          stroke="#0F3F72" stroke-width="1.6"
+          stroke-dasharray="4 4"
+          stroke-linecap="round"
+          opacity="0.55"/>
+
+    <!-- Boundary edges — all four solid -->
+    <line x1="0" y1="-72" x2="-57" y2="0"
+          stroke="#1A5C9E" stroke-width="2"
+          stroke-linecap="round"/>
+    <line x1="-57" y1="0" x2="0" y2="72"
+          stroke="#1A5C9E" stroke-width="2"
+          stroke-linecap="round"/>
+    <line x1="0" y1="-72" x2="57" y2="0"
+          stroke="#1A9068" stroke-width="2"
+          stroke-linecap="round"/>
+    <line x1="57" y1="0" x2="0" y2="72"
+          stroke="#1A9068" stroke-width="2"
+          stroke-linecap="round"/>
+
+    <!-- Apex node — Deep Blue -->
+    <circle cx="0"   cy="-72" r="10.4" fill="#0F3F72"/>
+    <circle cx="0"   cy="-72" r="3.6"  fill="#FFFFFF"/>
+
+    <!-- Left node — Atlas Blue -->
+    <circle cx="-57" cy="0"   r="10.4" fill="#1A5C9E"/>
+    <circle cx="-57" cy="0"   r="3.6"  fill="#FFFFFF"/>
+
+    <!-- Right node — Sage Teal -->
+    <circle cx="57"  cy="0"   r="10.4" fill="#1A9068"/>
+    <circle cx="57"  cy="0"   r="3.6"  fill="#E6F8F2"/>
+
+    <!-- Base node — Deep Sage -->
+    <circle cx="0"   cy="72"  r="10.4" fill="#0A4A35"/>
+    <circle cx="0"   cy="72"  r="3.6"  fill="#E6F8F2"/>
+
+  </g>
+
+</svg>

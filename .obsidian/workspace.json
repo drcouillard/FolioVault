@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "40fc47024699dc13",
+        "id": "2c2a6584be85edc4",
         "type": "tabs",
         "children": [
           {
-            "id": "e094a842864f29b0",
+            "id": "e99f0fc2d2dacf6b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00 - Inbox/Brand pipeline gaps — three fixes.md",
+                "file": "01 - Core/folio-voice.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Brand pipeline gaps — three fixes"
+              "title": "folio-voice"
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 260.5
   },
   "right": {
     "id": "22765d18ef4387d7",
@@ -180,43 +180,53 @@
       "bases:Create new base": false
     }
   },
-  "active": "e094a842864f29b0",
+  "active": "e99f0fc2d2dacf6b",
   "lastOpenFiles": [
-    "01 - Core/folio-voice.md.md",
-    "00 - Inbox/Brand pipeline gaps — three fixes.md",
-    "CLAUDE.md",
+    "05 - Build/artifacts/folio-landform-drag-drop-v2.html",
+    "02 - Brand/voice-folio-v2.md",
+    "02 - Brand/strategy-folio-v2.md",
+    "03 - Systems/protocols/protocol-horizon-expansion/SKILL.md",
+    "03 - Systems/protocols/protocol-horizon-expansion",
+    "03 - Systems/shared-references/event2-standard-forward.md",
     "01 - Core/folio-identity.md",
-    "02 - Brand/brand-guide.md",
-    "01 - Core/folio-id-framework.md.md",
-    "01 - Core/decisions-log.md",
-    "06 - Research/folio_id_models_analysis.html",
-    "03 - Systems/skills/modules-migration/module-living-glossary-spec.md",
-    "2026-04-25.md",
-    "03 - Systems/protocols/protocol-horizon-expansion.md",
-    "03 - Systems/skills/modules-migration/module-brand-voice-system/SKILL.md",
-    "03 - Systems/skills/modules-migration/module-brand-style-guide/references/brand-guide-sections.md",
-    "03 - Systems/orchestrators/orchestrator-brand/references/messaging-architecture.md",
-    "03 - Systems/orchestrators/orchestrator-software-systems/SKILL.md",
-    "03 - Systems/orchestrators/orchestrator-brand/SKILL.md",
-    "04 - Curriculum/geography/map-skills/Untitled.md",
-    "FolioVault/Welcome.md",
-    "03 - Systems/orchestrators/orchestrator-solutions/changelog.md",
-    "03 - Systems/orchestrators/orchestrator-solutions/meta/reference-file-template.md",
-    "01 - Core/phase-tracker.md",
-    "03 - Systems/skills/modules-migration/module-handoff-spec-brand-to-ux.md",
-    "03 - Systems/skills/modules-migration/module-misconception-diagnosis.md",
-    "03 - Systems/skills/modules-migration/module-visual-identity-system/references/typography-rules.md",
-    "03 - Systems/skills/modules-migration/module-visual-identity-system/references/logo-direction.md",
-    "03 - Systems/skills/modules-migration/module-visual-identity-system/references/layout-rules.md",
-    "03 - Systems/skills/modules-migration/module-visual-identity-system/references/color-system.md",
-    "03 - Systems/skills/modules-migration/module-visual-identity-system/references",
-    "03 - Systems/skills/modules-migration/module-visual-identity-system",
-    "03 - Systems/skills/modules-migration/module-output-formatter",
-    "03 - Systems/skills/modules-migration/module-mastery-tracker",
-    "03 - Systems/skills/modules-migration/module-learning-analytics/references",
-    "03 - Systems/skills/modules-migration/module-learning-analytics",
-    "03 - Systems/skills/modules-migration/module-consistency-checker",
-    "03 - Systems/orchestrators/orchestrator-edtech/references",
-    "03 - Systems/orchestrators/orchestrator-edtech"
+    "07 - Archive/module-content-generator-2026-04-archive.zip",
+    "07 - Archive/orchestrator-curriculum-2026-04-archive.zip",
+    "03 - Systems/skills/module-GEO-MS-006/references/spiral-tag-reference.md",
+    "03 - Systems/protocols/protocol-visual-identity-system/references/typography-rules.md",
+    "03 - Systems/protocols/protocol-visual-identity-system/references/logo-direction.md",
+    "03 - Systems/protocols/protocol-visual-identity-system/references/layout-rules.md",
+    "03 - Systems/protocols/protocol-visual-identity-system/references/color-system.md",
+    "03 - Systems/protocols/protocol-visual-identity-system/SKILL.md",
+    "03 - Systems/protocols/protocol-visual-identity-system/references",
+    "03 - Systems/protocols/protocol-visual-identity-system",
+    "03 - Systems/protocols/protocol-preflight-verifier/references/voice-rules.md",
+    "03 - Systems/protocols/protocol-preflight-verifier/references/question-standards.md",
+    "03 - Systems/protocols/protocol-preflight-verifier/references/module-spec-fields.md",
+    "03 - Systems/protocols/protocol-preflight-verifier/SKILL.md",
+    "03 - Systems/protocols/protocol-preflight-verifier/references",
+    "03 - Systems/protocols/protocol-preflight-verifier",
+    "03 - Systems/protocols/protocol-misconception-diagnosis/SKILL.md",
+    "03 - Systems/protocols/protocol-misconception-diagnosis/references",
+    "03 - Systems/protocols/protocol-misconception-diagnosis",
+    "03 - Systems/protocols/protocol-character-guidance/references/README.md",
+    "03 - Systems/protocols/protocol-character-guidance/SKILL.md",
+    "03 - Systems/protocols/protocol-character-guidance/references",
+    "03 - Systems/protocols/protocol-character-design/references/species-registry.md",
+    "03 - Systems/protocols/protocol-character-design/SKILL.md",
+    "03 - Systems/protocols/protocol-brand-voice-system/references/voice-framework.md",
+    "03 - Systems/protocols/protocol-brand-voice-system/references/messaging-pillars.md",
+    "03 - Systems/protocols/protocol-brand-voice-system/references/copy-contexts.md",
+    "03 - Systems/protocols/protocol-brand-voice-system/SKILL.md",
+    "03 - Systems/protocols/protocol-brand-style-guide/references/brand-guide-sections.md",
+    "04 - Curriculum/geography/references/climate-map-overlays/Koppen-Geiger_Map_North_America_present.svg.png",
+    "02 - Brand/folio-mark-v2.svg",
+    "04 - Curriculum/geography/references/base-maps/map-france-physical.png",
+    "04 - Curriculum/geography/references/base-maps/temp-france-altitudes.png",
+    "04 - Curriculum/geography/references/base-maps/temp-france-relief.png",
+    "04 - Curriculum/geography/references/climate-map-overlays/assessment-landform-match2.jpg",
+    "04 - Curriculum/geography/references/base-maps/map-world-climates.png",
+    "04 - Curriculum/geography/references/base-maps/world2.png",
+    "04 - Curriculum/geography/references/base-maps/map-flags2.png",
+    "04 - Curriculum/geography/references/base-maps/map-flags.png"
   ]
 }

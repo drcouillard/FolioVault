@@ -7,7 +7,7 @@ import https from "https";
 const OUTPUT_DIR =
   "C:\\Users\\amazi\\OneDrive\\FolioVault\\02 - Brand\\assets\\flags";
 
-const DELAY_MS = 1500; // between downloads — avoids HTTP 429
+const DELAY_MS = 1000; // between downloads — avoids HTTP 429
 
 // ── Country → Wikimedia flag filename map ─────────────────────────────────────
 // Format: "output_slug": "Flag_of_X.svg" (exact Wikimedia Commons filename)
@@ -49,7 +49,7 @@ const FLAG_MAP = {
   central_african_republic:         "Flag_of_the_Central_African_Republic.svg",
   chad:                             "Flag_of_Chad.svg",
   chile:                            "Flag_of_Chile.svg",
-  china:                            "Flag_of_the_People's_Republic_of_China.svg",
+  china:                            "Flag_of_the_People%27s_Republic_of_China.svg",
   colombia:                         "Flag_of_Colombia.svg",
   comoros:                          "Flag_of_the_Comoros.svg",
   democratic_republic_of_the_congo: "Flag_of_the_Democratic_Republic_of_the_Congo.svg",
@@ -255,17 +255,11 @@ function downloadFile(url, dest) {
   });
 }
 
-// ── Resolve Wikimedia Commons filename → 320px thumbnail URL ───────────────
+// ── Resolve Wikimedia SVG filename → 320px PNG thumbnail URL ─────────────────
 
 async function resolveWikimediaUrl(svgFilename) {
-  const encodedTitle = encodeURIComponent(`File:${svgFilename}`);
-  const apiUrl =
-    "https://commons.wikimedia.org/w/api.php" +
-    `?action=query&titles=${encodedTitle}` +
-    "&prop=imageinfo" +
-    "&iiprop=url" +
-    "&iiurlwidth=320" +
-    "&format=json";
+  const encoded = encodeURIComponent(`File:${svgFilename}`);
+  const apiUrl = `https://en.wikipedia.org/w/api.php?action=query&titles=${encoded}&prop=imageinfo&iiprop=url&format=json`;
 
   const { status, body } = await fetchText(apiUrl);
   if (status !== 200) return null;
@@ -275,7 +269,16 @@ async function resolveWikimediaUrl(svgFilename) {
 
   const pages = json?.query?.pages ?? {};
   const page = Object.values(pages)[0];
-  const thumbUrl = page?.imageinfo?.[0]?.url ?? null;
+  const svgUrl = page?.imageinfo?.[0]?.url ?? null;
+  if (!svgUrl) return null;
+
+  // Build the PNG thumbnail URL from the SVG URL
+  // Wikimedia thumb pattern: /commons/thumb/[hash]/[hash]/File.svg/320px-File.svg.png
+  const decodedFilename = decodeURIComponent(svgFilename);
+  const thumbUrl =
+    svgUrl.replace("/wikipedia/commons/", "/wikipedia/commons/thumb/") +
+    `/320px-${decodedFilename}.png`;
+
   return thumbUrl;
 }
 
