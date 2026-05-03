@@ -44,10 +44,10 @@ argument about what matters.
 |---|---|
 | `01 - Core/folio-voice.md` | Before writing ANY student-facing copy |
 | `references/GEO-MS-001-spec.md` | Before any content generation or artifact build |
-| `references/diagnostic-feedback-template.md` | Before writing wrong-answer feedback |
-| `references/scaffold-tier-definitions.md` | Before writing hint progressions |
+| `03 - Systems/shared-references/diagnostic-feedback-template.md` | Before writing wrong-answer feedback |
+| `03 - Systems/shared-references/scaffold-tier-definitions.md` | Before writing hint progressions |
 | `artifacts/map-comparison-explorer-spec.md` | Before building or modifying the interactive |
-| `references/educator-verification-checklist.md` | Before routing content for review |
+| `03 - Systems/shared-references/educator-verification-checklist.md` | Before routing content for review |
 
 **Do not generate content or code for this module without reading the spec
 and voice reference first. The spec is the contract. The voice reference is
@@ -98,12 +98,12 @@ Feedback:       [3 sentences max — name misconception, redirect to reasoning,
                  close with a cue — never a destination]
 ```
 
-Template: `references/diagnostic-feedback-template.md`
+Template: `03 - Systems/shared-references/diagnostic-feedback-template.md`
 
 ### 4. Hint Progressions
 
 Three scaffold tiers per question. Tier definitions:
-`references/scaffold-tier-definitions.md`
+`03 - Systems/shared-references/scaffold-tier-definitions.md`
 
 Tier 1: Redirect to the relevant concept section (no answer given)
 Tier 2: Narrow the reasoning space (eliminate one or two paths, not the answer)
@@ -151,11 +151,11 @@ Component:          [artifact / question set / feedback blocks / full module]
 Bloom check:        [confirm target levels match spec]
 Voice check:        [confirm no avoid-list words, no fiction, no penalty framing]
 [VERIFY] tags:      [list all factual claims flagged for expert review]
-Verification form:  references/educator-verification-checklist.md
+Verification form:  03 - Systems/shared-references/educator-verification-checklist.md
 ```
 
 Nothing advances from Alpha to Beta without named educator sign-off.
-Checklist: `references/educator-verification-checklist.md`
+Checklist: `03 - Systems/shared-references/educator-verification-checklist.md`
 
 ---
 
@@ -168,7 +168,7 @@ Checklist: `references/educator-verification-checklist.md`
 | 0–3 / 10 | Full module remediation loop — worked example re-presented at higher scaffold, then retry |
 
 Remediation copy rule: never signals "you failed." Always "let's look more
-closely at [concept]." See `references/scaffold-tier-definitions.md` for
+closely at [concept]." See `03 - Systems/shared-references/scaffold-tier-definitions.md` for
 remediation scaffold language.
 
 ---

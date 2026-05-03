@@ -45,11 +45,11 @@ a map can and cannot show. No single scale serves every purpose.
 |---|---|
 | `01 - Core/folio-voice.md` | Before writing ANY student-facing copy |
 | `references/GEO-MS-002-spec.md` | Before any content generation or artifact build |
-| `references/diagnostic-feedback-template.md` | Before writing wrong-answer feedback |
-| `references/scaffold-tier-definitions.md` | Before writing hint progressions |
+| `03 - Systems/shared-references/diagnostic-feedback-template.md` | Before writing wrong-answer feedback |
+| `03 - Systems/shared-references/scaffold-tier-definitions.md` | Before writing hint progressions |
 | `artifacts/scale-bar-tool-spec.md` | Before building the scale bar interactive |
 | `artifacts/navigator-worked-example-spec.md` | Before building the navigator interactive |
-| `references/educator-verification-checklist.md` | Before routing content for review |
+| `03 - Systems/shared-references/educator-verification-checklist.md` | Before routing content for review |
 | `references/spiral-tag-reference.md` | Before tagging any practice question |
 
 **Do not generate content or code without reading the spec and voice reference
@@ -104,12 +104,12 @@ or cut to 9 questions. Requires Rob's decision before build.
 ### 4. Diagnostic Feedback Blocks
 
 One block per wrong-answer distractor. Format and rules:
-`references/diagnostic-feedback-template.md`
+`03 - Systems/shared-references/diagnostic-feedback-template.md`
 
 ### 5. Hint Progressions
 
 Three scaffold tiers per question. Tier definitions:
-`references/scaffold-tier-definitions.md`
+`03 - Systems/shared-references/scaffold-tier-definitions.md`
 
 Tier 1: Redirect to relevant concept section (scale definition, large/small
         distinction, scale-as-constraint)
@@ -184,7 +184,7 @@ Voice check:        Confirm no avoid-list words; no fiction; no penalty framing;
                     figures (cost, altitude, entry altitude);
                     Q7 non-uniform scale bar — requires visual asset before
                     answer can be confirmed
-Verification form:  references/educator-verification-checklist.md
+Verification form:  03 - Systems/shared-references/educator-verification-checklist.md
 ```
 
 ---
